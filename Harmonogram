@@ -1,0 +1,27 @@
+1. Opracowanie szczegółowego harmonogramu.
+
+2. Przegląd materiałów źródłowych i tutoriali: rozeznanie w oficjalnej dokumentacji Unity ML-Agents, analiza wybranych poradników wideo/artykułów dotyczących implementacji autonomicznych pojazdów za pomocą RL.
+
+3. Instalacja i konfiguracja środowiska.
+
+4. Stworzenie modelu toru wyścigowego w Unity (geometria, zakręty, bandy, punkty kontrolne).
+
+5. Przygotowanie prefabrykatu samochodu (napęd, skręcanie, hamowanie).
+
+6. Implementacja skryptu agenta: definicja obserwacji, definicja akcji, definicja funkcji nagrody.
+
+7. Konfiguracja parametrów i środowiska treningowego.
+
+8. Przeprowadzenie pierwszych krótkich treningów i obserwacja zachowania agenta w TensorBoard.
+
+9. Diagnoza problemów i optymalizacja zachowania agenta.
+
+10. Testowanie modeli i porównywanie różnych wariantów uczenia.
+
+11. Przygotowanie ostatecznej wersji aplikacji z możliwością wizualizacji najlepszego modelu.
+
+12. Zebranie metryk i wykresów do raportu.
+
+13. Napisanie dokumentacji projektowej.
+
+14. Przedstawienie i obrona projektu.
