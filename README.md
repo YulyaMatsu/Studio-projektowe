@@ -38,8 +38,8 @@ Stworzenie, wytrenowanie i weryfikacja autonomicznego agenta sterującego pojazd
 * Skomplikowana symulacja fizyki pojazdu oraz otoczenia.
 * Interakcja z wieloma agentami jednocześnie.
 
-## 3. Harmonogram projekty
-| Lp. | Zadanie w harmonogramie | Planowany termin |
+## 3. Harmonogram projektu
+| Lp. | Zadanie | Planowany termin |
 | :---: | :--- | :---: |
 | **1.** | Opracowanie szczegółowego harmonogramu, celu i zakresu projektu. | 12.10 |
 | **2.** | Przegląd materiałów źródłowych i tutoriali: rozeznanie w oficjalnej dokumentacji Unity ML-Agents, analiza wybranych poradników wideo/artykułów dotyczących implementacji autonomicznych pojazdów za pomocą RL. | 19.10 |
