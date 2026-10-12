@@ -36,7 +36,6 @@ Stworzenie, wytrenowanie i weryfikacja autonomicznego agenta sterującego pojazd
 ### Wyłączenia z zakresu
 * Zaawansowany wygląd graficzny otoczenia i pojazdu.
 * Skomplikowana symulacja fizyki pojazdu oraz otoczenia.
-* Interakcja z wieloma agentami jednocześnie.
 
 ## 3. Harmonogram projektu
 | Lp. | Zadanie | Planowany termin |
