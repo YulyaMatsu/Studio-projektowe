@@ -10,7 +10,7 @@ Stworzenie, wytrenowanie i weryfikacja autonomicznego agenta sterującego pojazd
 ### Cele szczegółowe
 * **Budowa środowiska:** Przygotowanie modelu toru wyścigowego oraz fizyki pojazdu w Unity.
 * **Sformułowanie problemu RL:** Określenie sposobu postrzegania otoczenia przez agenta, możliwych do podjęcia akcji oraz opracowanie funkcji nagród i kar sterującej procesem uczenia.
-* **Trening i analiza:** Przeprowadzenie sesji uczenia agenta, obserwacja i analiza metrik postępu.
+* **Trening i analiza:** Przeprowadzenie sesji uczenia agenta, obserwacja i analiza metryk postępu.
 * **Ewaluacja i prezentacja:** Weryfikacja działania optymalnego modelu w czasie rzeczywistym oraz opracowanie raportu naukowego w LaTeX.
 
 ---
@@ -26,7 +26,7 @@ Stworzenie, wytrenowanie i weryfikacja autonomicznego agenta sterującego pojazd
   * Zaprojektowanie funkcji nagrody wspierającej płynną i bezkolizyjną jazdę.
   * Konfiguracja i uruchomienie procesu uczenia w oparciu o bibliotekę Unity ML-Agents.
 * **Eksperymenty i ocena:**
-  * Przeprowadzenie próbowych sesji treningowych i monitorowanie wskaźników uczenia.
+  * Przeprowadzenie próbnych sesji treningowych i monitorowanie wskaźników uczenia.
   * Dostrajanie parametrów procesu uczenia i funkcji nagrody w celu poprawy wyników.
   * Zapisanie i prezentacja zachowania wyuczonego modelu.
 * **Dokumentacja i raportowanie:**
