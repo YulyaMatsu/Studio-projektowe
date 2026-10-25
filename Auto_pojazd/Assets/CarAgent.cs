@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using UnityEngine.InputSystem;
 
 public class CarAgent : Agent
 {
@@ -33,6 +34,16 @@ public class CarAgent : Agent
                 checkpoints[i] = checkpointsParent.GetChild(i);
             }
         }
+        if (checkpoints != null && checkpoints.Length > 0)
+        {
+            startPosition = checkpoints[0].position;
+            startRotation = checkpoints[0].rotation;
+        }
+        else
+        {
+            startPosition = transform.position;
+            startRotation = transform.rotation;
+        }
     }
 
     public override void OnEpisodeBegin()
@@ -42,7 +53,7 @@ public class CarAgent : Agent
         carRb.linearVelocity = Vector3.zero;
         carRb.angularVelocity = Vector3.zero;
 
-        nextCheckpointIndex = 0;
+        nextCheckpointIndex = (checkpoints != null && checkpoints.Length > 1) ? 1 : 0;
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -61,12 +72,39 @@ public class CarAgent : Agent
         float forwardAmount = actions.ContinuousActions[0];
         float turnAmount = actions.ContinuousActions[1];
 
-        Vector3 moveDirection = transform.forward * forwardAmount * moveSpeed;
-        carRb.AddForce(moveDirection, ForceMode.Acceleration);
+        Vector3 targetVelocity = transform.forward * forwardAmount * moveSpeed;
+        Vector3 currentHorizontalVel = new Vector3(carRb.linearVelocity.x, 0, carRb.linearVelocity.z);
+        Vector3 newHorizontalVel = Vector3.Lerp(currentHorizontalVel, targetVelocity, Time.deltaTime * 5f);
+        carRb.linearVelocity = new Vector3(newHorizontalVel.x, carRb.linearVelocity.y, newHorizontalVel.z);
 
-        transform.Rotate(0f, turnAmount * steerSpeed * Time.deltaTime, 0f);
+        if (currentHorizontalVel.magnitude > 0.5f)
+        {
+            float steerDirection = (forwardAmount < 0f) ? -turnAmount : turnAmount;
+            transform.Rotate(0f, steerDirection * steerSpeed * Time.deltaTime, 0f);
+        }
 
-        AddReward(-1f / MaxStep);
+        if (MaxStep > 0)
+        {
+            AddReward(-1f / MaxStep);
+        }
+    }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var continuousActions = actionsOut.ContinuousActions;
+
+        if (Keyboard.current != null)
+        {
+            float forward = 0f;
+            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) forward = 1f;
+            if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) forward = -1f;
+            continuousActions[0] = forward;
+
+            float turn = 0f;
+            if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) turn = 1f;
+            if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) turn = -1f;
+            continuousActions[1] = turn;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
