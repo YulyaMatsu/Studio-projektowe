@@ -887,6 +887,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7384987213353811690, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7655619761656321940, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
       propertyPath: steerSpeed
       value: 100
