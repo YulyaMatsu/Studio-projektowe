@@ -52,4 +52,4 @@ Stworzenie, wytrenowanie i weryfikacja autonomicznego agenta sterującego pojazd
 | **10.** | Przygotowanie ostatecznej wersji aplikacji z możliwością wizualizacji najlepszego modelu. | 21.12 |
 | **11.** | Zebranie metryk i wykresów do raportu. | 04.01 |
 | **12.** | Napisanie dokumentacji projektowej. | 11.01 |
-| **13.** | Przedstawienie i obrona projektu. | 18.01 |
+| **13.** | Przedstawienie i obrona projektu. | 11.01 |
