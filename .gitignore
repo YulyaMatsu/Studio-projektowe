@@ -1,0 +1,10 @@
+# Python venv
+.venv/
+__pycache__/
+
+# ML-Agents training results
+results/**
+!results/**/*.onnx
+
+# Logs
+*.log

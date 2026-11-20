@@ -895,7 +895,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -917,11 +923,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 92426064-7e05-4fb7-8ae9-8e5626b65ff0
+  cloudProjectId: 0821ef12-db5b-4188-93e6-cc3510aa9ce2
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Auto_pojazd
-  organizationId: unity_5044543
+  organizationId: szymonlipinski3000mvntvywa
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

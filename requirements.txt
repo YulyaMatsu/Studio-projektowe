@@ -1,0 +1,15 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+# Blokada NumPy < 2.0 (konieczna dla kompatybilnosci z mlagents C-extensions)
+numpy>=1.21.2,<2.0.0
+
+# Ograniczenie protobuf dla ML-Agents
+protobuf>=3.19.0,<3.21.0
+
+# PyTorch (wersja kompatybilna z mlagents 1.1.0)
+torch>=2.0.0,<=2.2.2
+torchvision
+
+# Unity ML-Agents & TensorBoard
+mlagents==1.1.0
+tensorboard

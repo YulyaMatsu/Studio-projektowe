@@ -1,1 +1,67 @@
-{"count":1,"self":13.3084616,"total":13.339917199999999,"children":{"InitializeActuators":{"count":1,"self":0.0010004999999999999,"total":0.0010004999999999999,"children":null},"InitializeSensors":{"count":1,"self":0.00099969999999999985,"total":0.00099969999999999985,"children":null},"AgentSendState":{"count":413,"self":0.0030098,"total":0.021867499999999998,"children":{"CollectObservations":{"count":83,"self":0,"total":0,"children":null},"WriteActionMask":{"count":83,"self":0.0010011,"total":0.0010011,"children":null},"RequestDecision":{"count":83,"self":0.0178566,"total":0.0178566,"children":null}}},"DecideAction":{"count":413,"self":0.0019997,"total":0.0019997,"children":null},"AgentAct":{"count":413,"self":0.0055883,"total":0.0055883,"children":null}},"gauges":{},"metadata":{"timer_format_version":"0.1.0","start_time_seconds":"1792960783","unity_version":"6000.1.15f1","command_line_arguments":"E:\\apki\\unity\\hub_editor\\6000.1.15f1\\Editor\\Unity.exe -projectpath E:\\apki\\unity\\unity_proj\\Studio-projektowe\\Auto_pojazd -acceptSoftwareTermsForThisRunOnly -useHub -hubIPC -cloudEnvironment production","communication_protocol_version":"1.5.0","com.unity.ml-agents_version":"4.1.0","scene_name":"ComplexTrackScene","end_time_seconds":"1792960796"}}
+{
+  "count": 1,
+  "self": 26.50652,
+  "total": 26.5652653,
+  "children": {
+    "InitializeActuators": {
+      "count": 1,
+      "self": 0.0010011,
+      "total": 0.0010011,
+      "children": null
+    },
+    "InitializeSensors": {
+      "count": 1,
+      "self": 0,
+      "total": 0,
+      "children": null
+    },
+    "AgentSendState": {
+      "count": 1076,
+      "self": 0.0015038999999999999,
+      "total": 0.039305,
+      "children": {
+        "CollectObservations": {
+          "count": 216,
+          "self": 0.0010084,
+          "total": 0.0010084,
+          "children": null
+        },
+        "WriteActionMask": {
+          "count": 216,
+          "self": 0.0015038999999999999,
+          "total": 0.0015038999999999999,
+          "children": null
+        },
+        "RequestDecision": {
+          "count": 216,
+          "self": 0.035288799999999995,
+          "total": 0.035288799999999995,
+          "children": null
+        }
+      }
+    },
+    "DecideAction": {
+      "count": 1076,
+      "self": 0.004735,
+      "total": 0.004735,
+      "children": null
+    },
+    "AgentAct": {
+      "count": 1076,
+      "self": 0.012703899999999999,
+      "total": 0.012703899999999999,
+      "children": null
+    }
+  },
+  "gauges": {},
+  "metadata": {
+    "timer_format_version": "0.1.0",
+    "start_time_seconds": "1792962926",
+    "unity_version": "6000.1.15f1",
+    "command_line_arguments": "E:\\apki\\unity\\hub_editor\\6000.1.15f1\\Editor\\Unity.exe -projectpath E:\\apki\\unity\\unity_proj\\Studio-projektowe\\Auto_pojazd -acceptSoftwareTermsForThisRunOnly -useHub -hubIPC -cloudEnvironment production",
+    "communication_protocol_version": "1.5.0",
+    "com.unity.ml-agents_version": "4.1.0",
+    "scene_name": "ComplexTrackScene",
+    "end_time_seconds": "1792962952"
+  }
+}

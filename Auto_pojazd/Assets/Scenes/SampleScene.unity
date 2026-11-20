@@ -786,9 +786,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 687495048096772326, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572726698408964581, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637023475432161124, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821238127037078154, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4184516927326062790, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
       propertyPath: m_Name
       value: CheckpointsParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184516927326062790, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758986429406377824, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9024065190213416466, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
       propertyPath: m_LocalPosition.x

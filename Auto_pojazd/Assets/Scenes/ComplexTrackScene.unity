@@ -453,7 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40797829}
   - component: {fileID: 40797830}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44773525}
   - component: {fileID: 44773526}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 61300099}
   - component: {fileID: 61300100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135882687}
   - component: {fileID: 135882688}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192939698}
   - component: {fileID: 192939699}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2665,6 +2665,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510011396}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &518880712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2561901430651815416, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
+  m_PrefabInstance: {fileID: 1458970747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519537904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,7 +2896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535938116}
   - component: {fileID: 535938117}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,7 +2949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552315974}
   - component: {fileID: 552315975}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5556,7 +5561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925830309}
   - component: {fileID: 925830310}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6473,7 +6478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141209274}
   - component: {fileID: 1141209275}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7004,6 +7009,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -10.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2572726698408964581, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3011052693606210526, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
       propertyPath: m_LocalScale.x
       value: 17.572
@@ -7036,9 +7045,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 94.376
       objectReference: {fileID: 0}
+    - target: {fileID: 3637023475432161124, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821238127037078154, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4184516927326062790, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
       propertyPath: m_Name
       value: CheckpointsParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184516927326062790, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4638496567677822435, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
       propertyPath: m_LocalScale.x
@@ -7067,6 +7088,10 @@ PrefabInstance:
     - target: {fileID: 4638496567677822435, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 76.904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758986429406377824, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9024065190213416466, guid: f358fc8c787462c42b40d7519ce918f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8124,6 +8149,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2938145120419143490, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
   m_PrefabInstance: {fileID: 1458970747}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1331510628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518880712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  DecisionStep: 0
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &1355731079
 GameObject:
   m_ObjectHideFlags: 0
@@ -8705,7 +8745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2938145120419143490, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2938145120419143490, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8750,7 +8790,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2561901430651815416, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1331510628}
   m_SourcePrefab: {fileID: 100100000, guid: 3143c0a30b819764f9212ab9e7affa4e, type: 3}
 --- !u!1 &1467422297
 GameObject:
@@ -10428,7 +10471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731595090}
   - component: {fileID: 1731595091}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11998,7 +12041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1987316225}
   - component: {fileID: 1987316226}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ch7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
