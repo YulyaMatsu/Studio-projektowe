@@ -8,9 +8,13 @@ public class CarAgent : Agent
 {
     private Rigidbody carRb;
     
-    [Header("Movement Settings")]
-    public float moveSpeed = 15f;
-    public float steerSpeed = 150f;
+    [Header("Movement & Physics Settings")]
+    public float moveSpeed = 30f;
+    public float reverseSpeed = 8f;
+    public float acceleration = 20f;
+    public float brakeForce = 30f;
+    public float coastDrag = 2f; // powolne toczenie się po odpuszczeniu gazu
+    public float steerSpeed = 120f;
     
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -96,33 +100,73 @@ public class CarAgent : Agent
         float forwardAmount = Mathf.Clamp(actions.ContinuousActions[0], -1f, 1f);
         float turnAmount = Mathf.Clamp(actions.ContinuousActions[1], -1f, 1f);
 
-        // Płynna zmiana prędkości z użyciem fizyki
-        Vector3 targetVelocity = transform.forward * forwardAmount * moveSpeed;
-        Vector3 currentHorizontalVel = new Vector3(carRb.linearVelocity.x, 0f, carRb.linearVelocity.z);
-        Vector3 newHorizontalVel = Vector3.Lerp(currentHorizontalVel, targetVelocity, Time.fixedDeltaTime * 5f);
+        // Wyznaczanie prędkości wzdłużnej i bocznej
+        float currentForwardSpeed = Vector3.Dot(carRb.linearVelocity, transform.forward);
+        Vector3 lateralVelocity = transform.right * Vector3.Dot(carRb.linearVelocity, transform.right);
+
+        // 1. Logika gazu, hamulca i toczenia (Inercja)
+        if (forwardAmount > 0.05f)
+        {
+            // Przyspieszanie w przód
+            currentForwardSpeed += forwardAmount * acceleration * Time.fixedDeltaTime;
+            currentForwardSpeed = Mathf.Min(currentForwardSpeed, moveSpeed);
+        }
+        else if (forwardAmount < -0.05f)
+        {
+            if (currentForwardSpeed > 0.5f)
+            {
+                // Gdy auto jedzie w przód, sygnał w tył działa jak HAMULEC (nie zatrzymuje w miejscu)
+                currentForwardSpeed -= Mathf.Abs(forwardAmount) * brakeForce * Time.fixedDeltaTime;
+                if (currentForwardSpeed < 0f) currentForwardSpeed = 0f;
+            }
+            else
+            {
+                // Bieg wsteczny (dopiero po zatrzymaniu, łagodny i z limitem prędkości)
+                currentForwardSpeed += forwardAmount * (acceleration * 0.5f) * Time.fixedDeltaTime;
+                currentForwardSpeed = Mathf.Max(currentForwardSpeed, -reverseSpeed);
+            }
+        }
+        else
+        {
+            // Brak gazu i hamulca - auto łagodnie toczy się siłą pędu (inercja)
+            currentForwardSpeed = Mathf.MoveTowards(currentForwardSpeed, 0f, coastDrag * Time.fixedDeltaTime);
+        }
+
+        // 2. Przyczepność boczna opon (pozwala na lekki realistyczny poślizg)
+        lateralVelocity = Vector3.Lerp(lateralVelocity, Vector3.zero, Time.fixedDeltaTime * 8f);
+
+        // Złożenie wektora prędkości
+        Vector3 newHorizontalVel = transform.forward * currentForwardSpeed + lateralVelocity;
         carRb.linearVelocity = new Vector3(newHorizontalVel.x, carRb.linearVelocity.y, newHorizontalVel.z);
 
-        // Skręcanie pojazdu w trakcie ruchu
-        if (currentHorizontalVel.magnitude > 0.5f)
+        // 3. Skręcanie pojazdu w trakcie ruchu
+        if (Mathf.Abs(currentForwardSpeed) > 0.5f)
         {
-            float steerDirection = (forwardAmount < 0f) ? -turnAmount : turnAmount;
+            float steerDirection = (currentForwardSpeed < 0f) ? -turnAmount : turnAmount;
             transform.Rotate(0f, steerDirection * steerSpeed * Time.fixedDeltaTime, 0f);
         }
 
-        // Nagradzanie za prędkość w kierunku kolejnego checkpointu (Reward Shaping)
+        // Nagradzanie za prędkość w kierunku kolejnego checkpointu
         if (checkpoints != null && nextCheckpointIndex < checkpoints.Length)
         {
             Vector3 worldToCheckpoint = (checkpoints[nextCheckpointIndex].position - transform.position).normalized;
             float velocityTowardsCheckpoint = Vector3.Dot(carRb.linearVelocity, worldToCheckpoint);
-            // Dodajemy małą nagrodę za posuwanie się w stronę celu (lub małą karę za jazdę tyłem/oddalanie się)
             AddReward(velocityTowardsCheckpoint * 0.001f);
         }
 
-        // Drobna kara czasowa zachęcająca do szybkiej jazdy
-        if (MaxStep > 0)
+        // Nagroda za utrzymywanie wysokiej prędkości (zachęta do jazdy z gazem w podłodze)
+        float currentSpeed = carRb.linearVelocity.magnitude;
+        float speedRatio = Mathf.Clamp01(currentSpeed / moveSpeed);
+        AddReward(speedRatio * 0.003f);
+
+        // Kara za wleczenie się (prędkość poniżej 3 m/s)
+        if (currentSpeed < 3f)
         {
-            AddReward(-1f / MaxStep);
+            AddReward(-0.002f);
         }
+
+        // Stała kara za każdą klatkę (czas to strata punktów - zachęca do jak najszybszego przejazdu)
+        AddReward(-0.002f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -157,10 +201,16 @@ public class CarAgent : Agent
             AddReward(1.0f);
             nextCheckpointIndex++;
 
-            // Ukończenie całego okrążenia
+            // Ukończenie całego okrążenia - bonus bazowy + duży bonus za szybki czas okrążenia
             if (nextCheckpointIndex >= checkpoints.Length)
             {
-                AddReward(5.0f);
+                float timeBonus = 0f;
+                if (MaxStep > 0)
+                {
+                    float timeFractionLeft = Mathf.Clamp01(1f - ((float)StepCount / MaxStep));
+                    timeBonus = timeFractionLeft * 10.0f; // do +10 punktów za rekordowo szybki przejazd!
+                }
+                AddReward(5.0f + timeBonus);
                 EndEpisode();
             }
         }

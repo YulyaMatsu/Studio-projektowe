@@ -125,8 +125,8 @@ MonoBehaviour:
     maxStep: 3000
   hasUpgradedFromAgentParameters: 1
   MaxStep: 3000
-  moveSpeed: 15
-  steerSpeed: 150
+  moveSpeed: 30
+  steerSpeed: 120
   checkpointsParent: {fileID: 0}
 --- !u!114 &6306890149536548825
 MonoBehaviour:
