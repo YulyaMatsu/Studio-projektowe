@@ -1,0 +1,29 @@
+{
+    "CarBehavior": {
+        "checkpoints": [
+            {
+                "steps": 56520,
+                "file_path": "results\\ProstyTor_01\\CarBehavior\\CarBehavior-56520.onnx",
+                "reward": 12.500943374633788,
+                "creation_time": 1795142942.8555048,
+                "auxillary_file_paths": [
+                    "results\\ProstyTor_01\\CarBehavior\\CarBehavior-56520.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 56520,
+            "file_path": "results\\ProstyTor_01\\CarBehavior.onnx",
+            "reward": 12.500943374633788,
+            "creation_time": 1795142942.8555048,
+            "auxillary_file_paths": [
+                "results\\ProstyTor_01\\CarBehavior\\CarBehavior-56520.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.7.1+cu118"
+    }
+}

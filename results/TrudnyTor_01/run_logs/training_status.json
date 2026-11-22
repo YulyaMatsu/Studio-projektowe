@@ -1,0 +1,29 @@
+{
+    "CarBehavior": {
+        "checkpoints": [
+            {
+                "steps": 146100,
+                "file_path": "results\\TrudnyTor_01\\CarBehavior\\CarBehavior-146100.onnx",
+                "reward": 47.040847063064575,
+                "creation_time": 1795282601.1047745,
+                "auxillary_file_paths": [
+                    "results\\TrudnyTor_01\\CarBehavior\\CarBehavior-146100.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 146100,
+            "file_path": "results\\TrudnyTor_01\\CarBehavior.onnx",
+            "reward": 47.040847063064575,
+            "creation_time": 1795282601.1047745,
+            "auxillary_file_paths": [
+                "results\\TrudnyTor_01\\CarBehavior\\CarBehavior-146100.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.7.1+cu118"
+    }
+}

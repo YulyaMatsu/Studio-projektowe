@@ -1,0 +1,29 @@
+{
+    "CarBehavior": {
+        "checkpoints": [
+            {
+                "steps": 253426,
+                "file_path": "results\\TrudnyTor_Wyscigowy\\CarBehavior\\CarBehavior-253426.onnx",
+                "reward": null,
+                "creation_time": 1795284094.4982667,
+                "auxillary_file_paths": [
+                    "results\\TrudnyTor_Wyscigowy\\CarBehavior\\CarBehavior-253426.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 253426,
+            "file_path": "results\\TrudnyTor_Wyscigowy\\CarBehavior.onnx",
+            "reward": null,
+            "creation_time": 1795284094.4982667,
+            "auxillary_file_paths": [
+                "results\\TrudnyTor_Wyscigowy\\CarBehavior\\CarBehavior-253426.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.7.1+cu118"
+    }
+}
